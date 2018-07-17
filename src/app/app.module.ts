@@ -3,10 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from "@angular/http";
 import { IonicStorageModule } from '@ionic/storage';
-import { AgmCoreModule } from '@agm/core'
+import { AgmCoreModule } from '@agm/core';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { DeviceMotion } from '@ionic-native/device-motion';
 
 import { MyApp } from './app.component';
-import { MyTeamsPage, TournamentsPage, TeamsPage, TeamDetailPage, TeamHomePage, StandingsPage, GamePage, MapPage } from '../pages/pages';
+import { MyTeamsPage, TournamentsPage, TeamsPage, TeamDetailPage, TeamHomePage, StandingsPage, GamePage, MapPage, BarcodeScannerPage, DeviceMotionPage } from '../pages/pages';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +23,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TeamHomePage,
     StandingsPage,
     GamePage,
-    MapPage
+    MapPage,
+    BarcodeScannerPage,
+    DeviceMotionPage
   ],
   imports: [
     BrowserModule,
@@ -45,11 +49,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TeamHomePage,
     StandingsPage,
     GamePage,
-    MapPage
+    MapPage,
+    BarcodeScannerPage,
+    DeviceMotionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
+    DeviceMotion,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

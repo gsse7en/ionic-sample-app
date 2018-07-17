@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from "@angular/http"
 
-import { MyTeamsPage, TournamentsPage, TeamHomePage } from '../pages/pages';
+import { MyTeamsPage, TournamentsPage, TeamHomePage, BarcodeScannerPage, DeviceMotionPage } from '../pages/pages';
 import { EliteApi, UserSettings } from './shared/shared';
 
 @Component({
@@ -63,5 +63,13 @@ export class MyApp {
     });
     loader.present();
     this.eliteApi.getTournamentData(favorite.tournamentId).subscribe(index => this.nav.push(TeamHomePage, favorite.team))
+  }
+
+  goToBarcodeScanner() {
+    this.nav.push(BarcodeScannerPage);
+  }
+
+  goToDeviceMotion() {
+    this.nav.push(DeviceMotionPage);
   }
 }

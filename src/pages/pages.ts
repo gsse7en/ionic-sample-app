@@ -6,3 +6,5 @@ export * from './teams/teams.page';
 export * from './standings/standings.page';
 export * from './team-home/team-home.page';
 export * from './map/map.page';
+export * from './barcode-scanner/barcode-scanner.page';
+export * from './device-motion/device-motion.page';
